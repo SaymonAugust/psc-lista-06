@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class SepararParesImpares {
+    public static void main(String[] args) {
+        int[] numeros = new int[20]; // Vetor original com 20 números
+        ArrayList<Integer> pares = new ArrayList<>();   // Lista para pares
+        ArrayList<Integer> impares = new ArrayList<>(); // Lista para ímpares
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite 20 números inteiros:");
+
+        // Leitura dos 20 números
+        for (int i = 0; i < 20; i++) {
+            System.out.print("Número " + (i + 1) + ": ");
+            numeros[i] = scanner.nextInt();
+
+            // Classificação em par ou ímpar
+            if (numeros[i] % 2 == 0) {
+                pares.add(numeros[i]);
+            } else {
+                impares.add(numeros[i]);
+            }
+        }
+
+        scanner.close();
+
+        // Impressão dos vetores
+        System.out.println("\nVetor original:");
+        imprimirVetor(numeros);
+
+        System.out.println("\nNúmeros pares:");
+        imprimirLista(pares);
+
+        System.out.println("\nNúmeros ímpares:");
+        imprimirLista(impares);
+    }
+
+    // Método para imprimir vetor de inteiros
+    public static void imprimirVetor(int[] vetor) {
+        for (int num : vetor) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    // Método para imprimir listas de inteiros
+    public static void imprimirLista(ArrayList<Integer> lista) {
+        for (int num : lista) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
