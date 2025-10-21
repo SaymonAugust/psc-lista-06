@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class MediaNotas {
+    public static void main(String[] args) {
+        // Vetor para armazenar as 4 notas
+        double[] notas = new double[4];
+        double soma = 0;
+
+        // Scanner para leitura do teclado
+        Scanner scanner = new Scanner(System.in);
+
+        // Leitura das 4 notas
+        System.out.println("Digite 4 notas:");
+
+        for (int i = 0; i < 4; i++) {
+            System.out.print("Nota " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+            soma += notas[i]; // Soma para calcular a média
+        }
+
+        // Cálculo da média
+        double media = soma / 4;
+
+        // Exibição das notas
+        System.out.println("\nNotas digitadas:");
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Nota " + (i + 1) + ": " + notas[i]);
+        }
+
+        // Exibição da média
+        System.out.printf("\nMédia: %.2f\n", media);
+
+        // Fecha o scanner
+        scanner.close();
+    }
+}
